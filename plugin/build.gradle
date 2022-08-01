@@ -1,0 +1,33 @@
+apply plugin: 'groovy'
+apply plugin: 'java-gradle-plugin'
+apply from: '../maven-publish.gradle'
+
+gradlePlugin {
+    plugins {
+        //插件名,每一个插件都可以有
+        wallePlugin {
+            id = "walle"
+            implementationClass = "com.meituan.android.walle.GradlePlugin"
+        }
+    }
+}
+
+sourceCompatibility = JavaVersion.VERSION_11
+
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation fileTree(dir: "./src/main/libs", include: ['*.jar'])
+    implementation 'commons-io:commons-io:2.5'
+    implementation 'commons-codec:commons-codec:1.11'
+    implementation 'org.apache.commons:commons-lang3:3.5'
+    implementation 'com.android.tools.build:gradle:7.0.4'
+    implementation 'org.json:json:20180813'// Groovy里有，但是如果这里不依赖报JsonException not found，还是强制依赖下吧。
+    implementation project(':payload_writer')
+    implementation 'com.google.code.gson:gson:2.9.0'
+}
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}

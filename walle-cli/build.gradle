@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        maven { url "https://maven.aliyun.com/repository/public" }
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.3'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
+apply from: rootProject.file('quality.gradle')
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.meituan.android.walle.Main'
+        attributes 'Walle-Version': VERSION_NAME
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.beust:jcommander:1.78"
+    implementation 'commons-io:commons-io:2.5'
+    implementation project(':payload_writer')
+    implementation project(':payload_reader')
+    implementation 'org.json:json:20180813' //与gradle plugin使用同一版本
+    implementation 'com.google.code.gson:gson:2.9.0'
+}
+
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion

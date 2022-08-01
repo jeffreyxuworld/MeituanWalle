@@ -1,0 +1,5 @@
+include ':app'
+include ':library'
+include ':plugin'
+include ':payload_reader', ':payload_writer','walle-cli'
+//includeBuild('plugin')

@@ -1,0 +1,39 @@
+apply plugin: 'maven-publish'
+
+// 读取工程配置
+Properties gradleProperties = new Properties()
+gradleProperties.load(project.rootProject.file('gradle.properties').newDataInputStream())
+def VERSION_NAME = gradleProperties.getProperty("VERSION_NAME")
+def POM_URL = gradleProperties.getProperty("POM_URL")
+def GROUP_ID = gradleProperties.getProperty("GROUP_ID")
+
+// 读取插件配置
+Properties properties = new Properties()
+properties.load(project.file('gradle.properties').newDataInputStream())
+def POM_ARTIFACT_ID = properties.getProperty("POM_ARTIFACT_ID")
+def DESCRIPTION = properties.getProperty("DESCRIPTION")
+
+group = GROUP_ID
+//描述信息
+description = DESCRIPTION
+//插件版本号
+version = VERSION_NAME
+
+afterEvaluate {
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                //当前插件的名称
+                artifactId = POM_ARTIFACT_ID
+                from components.release
+            }
+        }
+        //插件存储库
+        repositories {
+            maven {
+                // 生成的插件位置
+                url = uri("$POM_URL")
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+apply plugin: 'java'
+apply from: rootProject.file('quality.gradle')
+apply from: '../maven-publish.gradle'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly 'org.json:json:20180813'//提供org.json环境，开发时注意与Android org.json api兼容
+}
+
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
