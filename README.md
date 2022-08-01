@@ -1,17 +1,10 @@
-# Walle
-[![](https://jitpack.io/v/Petterpx/walle.svg)](https://jitpack.io/#Petterpx/walle)  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Meituan-Dianping/walle/pulls)  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/Meituan-Dianping/walle/master/LICENSE)
+[![](https://jitpack.io/v/jeffreyxuworld/MeituanWalle.svg)](https://jitpack.io/#jeffreyxuworld/MeituanWalle)
 
 ## 说明
 
-源自 [美团 Walle](https://github.com/Meituan-Dianping/walle) ,因官方已许久未更新(近两年，上一次是2020.12)，插件内部不少api都已过时或者需要更改逻辑，特fork这个库作为一个临时适配，并迁移到了jitpack。
+源自 [美团 Walle](https://github.com/Meituan-Dianping/walle) 
 
-- 已适配到了 Agp7.0.4 ,理论上 7.x 都可以。
-
-如有问题，提 issus 即可，看到后就会帮忙解决，如果可以的话。
-
-> 后续如果官方正常更新，那么正常迁移到官方即可，并不影响。
->
-> 下面文档copy自walle,依赖方式部分已更新。
+将美团 Walle 多渠道打包的原始项目，更新 gradle 版本以及相关依赖库
 
 ## Walle
 
@@ -40,7 +33,7 @@ allprojects {
 }
 buildscript {
     dependencies {
-        classpath 'com.github.Petterpx.walle:plugin:1.0.3'
+        classpath 'com.github.jeffreyxuworld.MeituanWalle:plugin:0.9.0'
     }
 }
 ```
@@ -51,7 +44,7 @@ buildscript {
 apply plugin: 'walle'
 
 dependencies {
-    implementation 'com.github.Petterpx.walle:library:1.0.3'
+    implementation 'com.github.jeffreyxuworld.MeituanWalle:library:0.9.0'
 }
 ```
 

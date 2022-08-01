@@ -2,7 +2,7 @@
 
 ```groovy
 dependencies {
-  implementation 'com.github.Petterpx.walle:payload_writer:1.0.3'
+  implementation 'com.github.jeffreyxuworld.MeituanWalle:payload_writer:0.9.0'
 }
 ```
 

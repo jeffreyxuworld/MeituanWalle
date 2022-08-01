@@ -12,7 +12,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.2'
-        classpath "com.github.Petterpx.walle:plugin:1.0.3"
+        classpath "com.github.jeffreyxuworld.MeituanWalle:plugin:0.9.0"
     }
 }
 
@@ -85,7 +85,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation "com.github.Petterpx.walle:library:1.0.3"
+    implementation "com.github.jeffreyxuworld.MeituanWalle:library:0.9.0"
 }
 
 walle {

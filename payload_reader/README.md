@@ -2,7 +2,7 @@
 
 ```groovy
 dependencies {
-    implementation 'com.github.Petterpx.walle:payload_reader:1.0.3'
+    implementation 'com.github.jeffreyxuworld.MeituanWalle:payload_reader:0.9.0'
 }
 ```
 
