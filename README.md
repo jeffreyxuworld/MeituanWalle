@@ -33,7 +33,7 @@ allprojects {
 }
 buildscript {
     dependencies {
-        classpath 'com.github.jeffreyxuworld.MeituanWalle:plugin:0.9.0'
+        classpath 'com.github.jeffreyxuworld.MeituanWalle:plugin:1.0.3'
     }
 }
 ```
@@ -44,7 +44,7 @@ buildscript {
 apply plugin: 'walle'
 
 dependencies {
-    implementation 'com.github.jeffreyxuworld.MeituanWalle:library:0.9.0'
+    implementation 'com.github.jeffreyxuworld.MeituanWalle:library:1.0.3'
 }
 ```
 
